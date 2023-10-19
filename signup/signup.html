@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form action="" class="register-form">
+                <input type="text" id="nm" placeholder="user name">
+                <input type="email" id="mail" placeholder="email">
+                <input pattern=".{8,}" id="pwd" type="password" name="pass" placeholder="Password" required />
+                <input pattern=".{8,}" id="Cpwd" type="password" name="pass" placeholder="Confirm password" required />
+                <button id="save_btn" onclick="saveData()" onclick="Validate()">Sign Up</button>
+                <p class="message">Already Signed Up? </p>
+                <button><a href="signin.html">Sign In</a></button>
+            </form>
+
+
+        </div>
+    </div>
+</body>
+<script>
+     
+    function saveData() {
+        let nm, mail, pwd, Cpwd;
+        nm = document.getElementById("nm").value;
+        mail = document.getElementById("mail").value;
+        pwd = document.getElementById("pwd").value;
+        Cpwd = document.getElementById("Cpwd").value;
+
+
+        let user_data = new Array();
+        user_data = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+        if (user_data.some((v) => {
+                return v.mail == mail
+            })) {
+            alert("Already Signed Up with this email!");
+        } else {
+            user_data.push({
+                "nm": nm,
+                "mail": mail,
+                "pwd": pwd,
+                "Cpwd":Cpwd
+            })
+            localStorage.setItem("users", JSON.stringify(user_data));
+        }
+
+    }
+
+    
+  
+    function Validate() {
+        var password = document.getElementById("pwd").value;
+        var confirmPassword = document.getElementById("Cpwd").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+
+    // localStorage.setItem("nm",nm)
+    // localStorage.setItem("mail",mail)
+    // localStorage.setItem("pwd",pwd)
+    // localStorage.setItem("Cpwd",Cpwd)
+    
+</script>
+
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>
+            Dashborad 
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      </head>
+      <body>
+        
+         <style>
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="dash">
+            <a class="active" href="#dashboard">Dashboard</a>
+
+            <div class="container-1">
+                <button onclick="Logout();" style="float: right;">Logout</button> 
+                <h4>Hi <script>document.write(localStorage.getItem('nm'));</script></h4>
+        </div>
+     
+      
+      
+      </body>
+      <script>
+        let nm=localStorage.getItem('nm')?localStorage.getItem('nm'):''
+        console.log(nm);
+        if(nm=='')
+        {
+          alert('U need to login first');
+          window.location.href="signin.html";
+        }
+        function Logout()
+        {
+          localStorage.removeItem('nm');
+          localStorage.removeItem('mail');
+          window.location.href="signin.html";
+        }
+  </script>
+      </html>

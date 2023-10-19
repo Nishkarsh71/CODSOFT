@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form action="" class="register-form">
+                <input type="email" id="mail" placeholder="email">
+                <input pattern=".{8,}" id="pwd" type="password" name="pass" placeholder="Password" required />
+                <button id="save_btn" onclick="saveData()">Sign In</button>
+                <p class="message">New User</p>
+
+                <button><a href="signup.html">Sign Up</a></button>
+                <a href="index.html"></a>
+            </form>
+        </div>
+</body>
+
+<script>
+    let nm = localStorage.getItem('nm') ? localStorage.getItem('nm') : ''
+    if (nm != '') {
+        alert('Please visit profile');
+        window.location.href = "dashboard.html";
+    }
+
+    function saveData() {
+        let mail, pwd;
+        mail = document.getElementById("mail").value;
+
+        pwd = document.getElementById("pwd").value;
+
+        let user_data = new Array();
+        user_data = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+        if (user_data.some((v) => {
+                return v.mail == mail && v.pwd == pwd
+            })) {
+            alert("Login Pass");
+            let current_user = user_data.filter((v) => {
+                return v.mail == mail && v.pwd == pwd
+            })[0]
+            localStorage.setItem('nm', current_user.name);
+            localStorage.setItem('mail', current_user.mail);
+            window.location.href = "dashboard.html"
+        } else {
+            alert('Login Fail');
+        }
+
+    }
+</script>
+
+</html>

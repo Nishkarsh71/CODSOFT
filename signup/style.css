@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif, white;
+    background-image:url("b1.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+	
+
+  }
+  
+  .nav {
+    overflow: hidden;
+    background-color: f5f5f5;
+  }
+  
+  .nav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .nav a.active {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .nav .container {
+    float: right;
+  }
+  
+  
+  .nav .container button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav .container button:hover {
+    background: #ccc;
+  }
+  
+  .login-page{
+      width: 360px;
+      padding: 10% 0 0;
+      margin: auto;
+  }
+
+  .form{
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+      margin: 0 auto 100px;
+      padding: 45px;
+      text-align: center;
+	  text-decoration: white;
+
+  }
+  .form input{
+      font-family: "Roboto",sans-serif;
+      outline:1;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+  }
+
+  .form button{
+      font-family: "Roboto",sans-serif;
+      text-transform: uppercase;
+      outline: 0;
+      background:rgb(94, 190, 190);
+      width: 100%;
+      border: 0;
+      padding: 15px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+  }
+
+  .login-page .form button:hover{
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: rgb(30, 114, 209);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+
+  }
+
+  .dash {
+    overflow: hidden;
+    background-color: #e9e9e9;
+  }
+  
+ 
+  .dash .container-1 {
+    float: right;
+  }
+  
+  
+  .dash .container-1 button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dash .container-1 button:hover {
+    background: #ccc;
+  }
